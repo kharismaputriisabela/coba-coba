@@ -1,0 +1,12 @@
+public function hitungBiaya() {
+    // Biaya = 100.000 + 25.000 jika penggunaan_lampu = YA
+    $biaya = 100000;
+    if ($this->penggunaanLampu == 'YA') {
+        $biaya += 25000;
+    }
+    return $biaya;
+}
+
+public function tampilkanInformasi() {
+    return "Nama: {$this->namaPenyewa} | Tanggal: {$this->tanggalSewa} | Jenis: {$this->jenisLapangan} | Biaya: Rp" . number_format($this->hitungBiaya());
+}
